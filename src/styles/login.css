@@ -1,0 +1,127 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.login-card {
+  width: 380px;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 40px rgba(124, 92, 255, 0.2);
+  text-align: center;
+}
+
+/* TEXT */
+.login-subtext {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: white;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 20px 0;
+  color: #64748b;
+}
+
+/* FOOTER */
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-footer span {
+  color: #8b5cf6;
+  cursor: pointer;
+}
+
+/* SIGNUP */
+
+.signup-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.signup-card {
+  width: 400px;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 40px rgba(124, 92, 255, 0.2);
+  text-align: center;
+}
+
+/* TEXT */
+.signup-subtext {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.signup-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: white;
+}
+
+/* BUTTON */
+.signup-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 20px 0;
+  color: #64748b;
+}
+
+/* FOOTER */
+.signup-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-footer a {
+  color: #8b5cf6;
+  text-decoration: none;
+}
+
+.links a {
+  color: #cbd5f5;
+  text-decoration: none;
+}
+
+.login-footer a {
+  text-decoration: none; /* 🔥 remove underline */
+  color: #8b5cf6;
+}
