@@ -16,13 +16,15 @@ export const handleLogin = async ({
 };
 
 export const handleSignup = async ({
+  name,
   email,
   password,
 }: {
+  name: string;
   email: string;
   password: string;
 }) => {
-  const res = await signup({ email, password });
+  const res = await signup({ name, email, password });
 
   return res;
 };

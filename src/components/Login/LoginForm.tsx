@@ -12,11 +12,9 @@ const LoginForm = () => {
   const onSubmit = async () => {
     try {
       const res = await handleLogin({ email, password });
-
-      console.log(res);
-
+      localStorage.setItem("token", res.token);
       // redirect after login
-      navigate("/dashboard");
+      navigate("/projects");
     } catch (err) {
       console.error(err);
       alert("Login failed");
@@ -26,14 +24,13 @@ const LoginForm = () => {
   return (
     <div className="login-container">
       <div className="login-card">
-
         <h2>Welcome back 👋</h2>
-        <p className="login-subtext">
-          Login to your Spentrax account
-        </p>
+        <p className="login-subtext">Login to your Spentrax account</p>
 
         <input
           type="email"
+          name="email"
+          autoComplete="email"
           placeholder="Email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -41,6 +38,8 @@ const LoginForm = () => {
 
         <input
           type="password"
+          name="password"
+          autoComplete="current-password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -52,9 +51,7 @@ const LoginForm = () => {
 
         <div className="divider">OR</div>
 
-        <button className="btn-outline">
-          Continue with Google
-        </button>
+        <button className="btn-outline">Continue with Google</button>
 
         <p className="login-footer">
           Don’t have an account?{" "}
@@ -62,7 +59,6 @@ const LoginForm = () => {
             <Link to="/signup">Sign up</Link>
           </span>
         </p>
-
       </div>
     </div>
   );
