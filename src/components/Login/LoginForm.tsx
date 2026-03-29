@@ -8,13 +8,14 @@ const LoginForm = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit = async () => {
+  const onSubmit = async (e: React.FormEvent) => {
     try {
       const res = await handleLogin({ email, password });
       localStorage.setItem("token", res.token);
-      // redirect after login
       navigate("/projects");
+      e.preventDefault(); // important
     } catch (err) {
       console.error(err);
       alert("Login failed");
@@ -36,14 +37,25 @@ const LoginForm = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <input
-          type="password"
-          name="password"
-          autoComplete="current-password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="password-wrapper">
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            autoComplete="current-password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <span
+            className="eye-icon"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            <span className="material-icons">
+              {showPassword ? "visibility_off" : "visibility"}
+            </span>
+          </span>
+        </div>
 
         <button className="btn-main login-btn" onClick={onSubmit}>
           Login

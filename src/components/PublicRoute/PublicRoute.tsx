@@ -1,18 +1,13 @@
 import { Navigate } from "react-router-dom";
-import { ReactNode } from "react";
 
-type Props = {
-  children: ReactNode;
-};
-
-const PublicRoute = ({ children }: Props) => {
+const PublicRoute = ({ children }: any) => {
   const token = localStorage.getItem("token");
 
   if (token) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to="/projects" replace />;
   }
 
-  return <>{children}</>;
+  return children;
 };
 
 export default PublicRoute;

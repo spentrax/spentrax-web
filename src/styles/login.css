@@ -31,6 +31,7 @@
   border: 1px solid #334155;
   background: transparent;
   color: white;
+  display: flex;
 }
 
 /* BUTTON */
@@ -124,4 +125,30 @@
 .login-footer a {
   text-decoration: none; /* 🔥 remove underline */
   color: #8b5cf6;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+.eye-icon:hover {
+  color: #fff;
+}
+
+.eye-icon .material-icons {
+  font-size: 20px;
 }

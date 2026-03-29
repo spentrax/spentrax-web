@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setGlobalLoader } from "../services/loaderService";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -8,8 +9,9 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+  setGlobalLoader(true);
 
+  const token = localStorage.getItem("token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -18,11 +20,15 @@ api.interceptors.request.use((config) => {
 });
 
 api.interceptors.response.use(
-  (res) => res,
+  (res) => {
+    setGlobalLoader(false);
+    return res;
+  },
   (err) => {
+    setGlobalLoader(false);
+
     if (err.response?.status === 401) {
       localStorage.removeItem("token");
-      window.location.href = "/login";
     }
 
     return Promise.reject(err);
