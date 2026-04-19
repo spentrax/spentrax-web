@@ -57,7 +57,7 @@ const LoginForm = () => {
           </span>
         </div>
 
-        <button className="btn-main login-btn" onClick={onSubmit}>
+        <button type="submit" className="btn-main login-btn" onClick={onSubmit}>
           Login
         </button>
 
